@@ -1,0 +1,17 @@
+div{
+    height: 78%;
+    overflow: auto;
+}
+table.versesTable th, td{
+    border: 1px solid;
+}
+
+.versesTable{
+    float: left;
+}
+.mainTable{
+    float: left;
+}
+.sentencesTable{
+    float: left;
+}

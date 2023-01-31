@@ -1,0 +1,15 @@
+<h3>Short brief of the text:</h3>
+<div *ngIf="numOfWordsInTheInput == 1">
+    <span *ngFor="let w of briefOfText">
+        <span  *ngIf="w.positionId == positionId"><mark>{{w.wordValue}} </mark></span>
+        <span *ngIf="w.positionId != positionId">{{w.wordValue}} </span>
+    </span>
+
+</div>
+
+<div *ngIf="numOfWordsInTheInput > 1">
+    <span *ngFor="let w of briefOfText">
+        <span *ngIf="toShow(w.positionId!)"><mark>{{w.wordValue}} </mark></span>
+        <span *ngIf="!toShow(w.positionId!)">{{w.wordValue}} </span>
+    </span>
+</div>

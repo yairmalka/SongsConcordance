@@ -1,0 +1,21 @@
+<app-sub-header> There are {{groups.length}} groups:</app-sub-header>
+
+<div>
+    <table>
+        <tr>
+            <th>Group name</th>
+            <th>Group index</th>
+            <th>Words in the group</th>
+        </tr>
+        <tr *ngFor="let g of groups">
+            <td>{{g.groupName}}</td>
+            <td>{{g.groupIndex}}</td>
+            <td>
+                <a routerLink="/groups/WordsInGroup/{{g.groupId}}">...</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<a class="addNewGroup" routerLink="/groups/addNewGroup">add new group</a>
+<a class="addWordToGroup" routerLink="/groups/addWordToGroup">add word to group</a>

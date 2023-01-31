@@ -1,0 +1,15 @@
+<app-sub-header>Add word to group:</app-sub-header>
+
+<div>
+    <form>
+        <label>Group Name:</label>
+        <br>
+        <input type="text" placeholder="Group Name" name="groupName" [(ngModel)]="wordVsGroupModel.groupName">
+        <br>
+        <label>Word:</label>
+        <br>
+        <input type="text" placeholder="word" name="word" [(ngModel)]="wordVsGroupModel.wordValue">
+        <br>
+        <button (click)="addWordToGroup()">Add</button>
+    </form>
+</div>

@@ -1,0 +1,39 @@
+<app-sub-header>  Find word by index</app-sub-header>
+<div>
+    <form>
+        <!--(ngModelChange)="clicked = false" indicates that user removed values from form fields so i change the boolean "clicked" to false-->
+        <label>Word Index:</label>
+        <br>
+        <input (ngModelChange)="clicked = false" type="number" placeholder="Word Index" name="wordIndex" [(ngModel)]="wordIndex">
+        <br><br>
+        <label>Sentence Number:</label>
+        <br>
+        <input (ngModelChange)="clicked = false" type="number" placeholder="Sentence Number" name="sentenceNumber" [(ngModel)]="sentenceNumber">
+        <br><br>
+        <label>Verse Number:</label>
+        <br>
+        <input (ngModelChange)="clicked = false" type="number" placeholder="Verse Number" name="verseNumber" [(ngModel)]="verseNumber">
+        <br>
+        <button (click)="findWordByIndex()">Search</button>
+    </form>
+</div>
+
+<div>
+    <table *ngIf="wordIndex!=null && sentenceNumber!=null && verseNumber!=null && clicked === true">
+        <tr>
+            <th>Word Value</th>
+            <th>Artist</th>
+            <th>Title</th>
+            <th>Brief</th>
+        </tr>
+        <tr *ngFor="let w of wordsByIndexFound">
+            <td>{{w.wordValue}}</td>
+            <td>{{w.artist}}</td>
+            <td>{{w.title}}</td>
+            <td>
+                <a routerLink="/positions/shortSongBrief/{{w.positionId}}/1" style="text-decoration:none">
+                ...</a>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,13 @@
+<app-sub-header>Add new expression:</app-sub-header>
+
+<div>
+    <div>
+        <form>
+            <label>Expression Value:</label>
+            <br>
+            <input type="text" placeholder="Expression Value" name="expressionValue" [(ngModel)]="expression.expressionValue">
+            <br><br>
+            <button [disabled]="expression.expressionValue == '' " (click)="addExpression()">Add</button>
+        </form>
+    </div>
+</div>

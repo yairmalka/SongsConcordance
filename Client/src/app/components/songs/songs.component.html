@@ -1,0 +1,45 @@
+<app-sub-header> There are {{songs.length}} Songs (files) in the Database</app-sub-header>
+
+<div>
+    <table>
+        <tr>
+            <th>Artist</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Album</th>
+            <th>Genre</th>
+            <th>Words</th>
+            <th>Lyric</th>
+            <th>Statistic data</th>
+            <th>Edit</th>
+
+        </tr>
+        <tr  *ngFor="let s of songs">
+            <td>{{s.artist}}</td>
+            <td>{{s.title}}</td>
+            <td>{{s.year}}</td>
+            <td>{{s.album}}</td>
+            <td>{{s.genre}}</td>
+            <td>
+                <a routerLink="/songs/lyrics/{{s.songId}}">
+                    <img src="/assets/wordsIcon.png">
+                </a>
+            </td>
+            <td>
+                <a class="fullSongLyricLink" routerLink="/songs/fullSongLyric/{{s.songId}}">
+                    <img src="/assets/lyricIcon.png">
+                </a></td>
+            <td>
+                <a routerLink="/songs/statisticalData/{{s.songId}}">
+                    <img src="/assets/statisticsIcon.png">
+                </a>
+            </td>
+            <td>
+                <a routerLink="/songs/editSong/{{s.songId}}">
+                    <img src="/assets/editIcon.png">
+                </a>
+            </td>
+        </tr>
+    </table>
+    
+    <a class="findSongsByDataLink" routerLink="/songs/findSongsByData"> find songs by data</a>

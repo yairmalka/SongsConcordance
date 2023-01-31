@@ -1,0 +1,5 @@
+div{
+    height: 75%;
+    overflow: auto;
+    white-space: pre-line;
+}

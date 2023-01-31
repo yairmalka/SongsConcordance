@@ -1,0 +1,12 @@
+.findSongsByDataForm{
+    position: absolute;
+}
+
+div{
+    height: 75%;
+    overflow: auto;
+  }
+
+.fullSongLyricLink{
+    text-decoration:none
+}

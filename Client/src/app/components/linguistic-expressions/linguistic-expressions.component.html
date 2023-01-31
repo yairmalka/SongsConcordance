@@ -1,0 +1,25 @@
+<app-sub-header> There are total of {{expressions.length}} expressions </app-sub-header>
+
+<div>
+    <table>
+        <tr>
+            <th>Expression</th>
+            <th>Exist</th>
+            <th>occurrences</th>
+            <th>Locations</th>
+        </tr>
+        <tr *ngFor="let e of expressions">
+            <td>{{e.expressionValue}}</td>
+            <td>{{e.expressionExist}}</td>
+            <td>{{e.expressionOccurrences}}</td>
+            <td> 
+                <a *ngIf="e.expressionOccurrences != null && e.expressionOccurrences > 0" routerLink="/linguistic-expressions/expressionPositionsTable/{{e.expressionId}}">
+                <img src="/assets/locationsIcon.png">
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<a class="addExpression" routerLink="/linguistic-expressions/addNewExpression">Add new Expression</a>
+<a class="searchExpression" routerLink="/linguistic-expressions/SearchExpression"> Search for Expression</a>

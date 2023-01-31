@@ -1,0 +1,11 @@
+<app-sub-header> {{song.artist}} - {{song.title}}</app-sub-header>
+<div>
+    <table>
+        <tr>
+            <th>Word Value</th>
+        </tr>
+        <tr  *ngFor="let w of wordsOfOneSong">
+            <td>{{w.wordValue}}</td>
+        </tr>
+    </table>
+</div>

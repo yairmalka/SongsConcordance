@@ -1,0 +1,52 @@
+<app-sub-header> statistical data of {{songModel.artist}} - {{songModel.title}} </app-sub-header>
+
+<div>
+    <table class="mainTable">
+            <tr>
+              <th>Longest Word</th>
+              <td>{{statisticalDataModel.longestWord}}</td>
+            </tr>
+            <tr>
+              <th>shortest Word</th>
+              <td>{{statisticalDataModel.shortestWord}}</td>
+            </tr>
+            <tr>
+              <th>Word Average Length</th>  
+              <td>{{wordAvgLength}}</td>
+            </tr>
+            <tr>
+                <th>Total words in the song</th>  
+                <td>{{statisticalDataModel.howMuchWordsInTheSong}}</td>
+            </tr>
+            <tr>
+                <th>Most common Words:</th>  
+                <td *ngFor="let w of statisticalDataModel.wordsAppearsTheMostInTheSong">{{w}}</td>
+            </tr>
+    </table>
+
+            <table class="versesTable">
+                <tr>
+                  <th>Verse Number:</th>
+                  <th *ngFor="let el of versesArrayFromOneToLength" scope="col">{{el}}</th>
+                </tr>
+                <tr>
+                  <th scope="row">Number of words:</th>
+                  <td *ngFor="let n of statisticalDataModel.howMuchWordsInVerses">{{n}}</td>
+                </tr>
+                <tr>
+            </table>
+
+            <table class="sentencesTable">
+                <tr>
+                  <th>Sentence Number:</th>
+                  <th *ngFor="let el of sentenceArrayFromOneToLength" scope="col">{{el}}</th>
+                </tr>
+                <tr>
+                  <th scope="row">Number of words:</th>
+                  <td *ngFor="let n of statisticalDataModel.howMuchWordsInSentences">{{n}}</td>
+                </tr>
+                <tr>
+            </table>
+
+   
+</div>

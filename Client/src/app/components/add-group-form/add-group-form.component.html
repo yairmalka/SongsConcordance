@@ -1,0 +1,18 @@
+<app-sub-header>Add new group:</app-sub-header>
+
+<div>
+    <div>
+        <form>
+            <label>Group name:</label>
+            <br>
+            <input type="text" placeholder="Group Name" name="groupName" [(ngModel)]="group.groupName">
+            <br><br>
+            <label>Group index:</label>
+            <br>
+            <input type="number" placeholder="Group index" name="groupIndex" [(ngModel)]="group.groupIndex">
+            <br><br>
+            <button [disabled]="group.groupName == ''  || group.groupIndex == null" (click)="addGroup()">Add</button>
+        </form>
+    </div>
+</div>
+

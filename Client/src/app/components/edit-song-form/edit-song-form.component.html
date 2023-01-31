@@ -1,0 +1,22 @@
+<app-sub-header> :עריכת נתונים מובנים</app-sub-header>
+
+<div>
+    <form>
+        <label>Artist: </label>
+        <input disabled type="text" value="{{songToEdit.artist}}"> 
+        <br><br>
+        <label>Title: </label>
+        <input disabled type="text" value="{{songToEdit.title}}"> 
+        <br><br>
+        <label>Year: </label>
+        <input type="number" name="year" [(ngModel)]="songToEdit.year"> 
+        <br><br>
+        <label>Album: </label>
+        <input  type="text" name="album" [(ngModel)]="songToEdit.album"> 
+        <br><br>
+        <label>Genre: </label>
+        <input  type="text" name="genre" [(ngModel)]="songToEdit.genre">
+        <br><br>
+        <button (click)="editPartialSong()">Edit</button>
+    </form>
+</div>

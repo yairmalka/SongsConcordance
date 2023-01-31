@@ -1,0 +1,32 @@
+<app-sub-header>Find Expression</app-sub-header>
+<div>
+    <form>
+        <!--(ngModelChange)="clicked = false" indicates that user removed values from form fields so i change the boolean "clicked" to false-->
+        <label>Expression:</label>
+        <br>
+        <input (ngModelChange)="clicked = false" type="text" placeholder="expression" name="expression" [(ngModel)]="expression">
+        <button [disabled]="expression == '' " (click)="searchExpression()">Search</button>
+    </form>
+</div>
+
+<div class="dataTable">
+    <h5 *ngIf="expression!=null && clicked === true"> The expression "{{expression}}" appears {{songAndPosition.length}} times in all the songs</h5>
+    <table  *ngIf="expression!=null && clicked === true">
+        <tr>
+            <th>Song</th>
+            <th>Word index</th>
+            <th>Sentence Number</th>
+            <th>Verse Number</th>
+            <th>Brief</th>
+        </tr>
+        <tr *ngFor="let sNp of songAndPosition">
+            <td>{{sNp.artistAndTitle}}</td>
+            <td>{{sNp.wordIndex}}</td>
+            <td>{{sNp.sentenceNumber}}</td>
+            <td>{{sNp.verseNumber}}</td>
+            <td>
+                <a routerLink="/positions/shortSongBrief/{{sNp.positionId}}/{{numOfWordsInTheExpression}}" style="text-decoration:none">...</a>
+            </td>
+        </tr>
+    </table>
+</div>

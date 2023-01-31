@@ -1,0 +1,9 @@
+a{
+    display: block;
+    margin-top: 20px;
+}
+
+.active{
+    color: blueviolet;
+    font-weight: bold;
+}

@@ -1,0 +1,10 @@
+form{
+    position: absolute;
+    top: 80px;
+}
+
+.dataTable{
+        height: 75%;
+        overflow: auto;
+}
+

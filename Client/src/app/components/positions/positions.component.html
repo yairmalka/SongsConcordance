@@ -1,0 +1,27 @@
+<app-sub-header>there are {{positions.length}} words in different positions</app-sub-header>
+
+<div>
+    <table>
+        <tr>
+            <th>Word Value</th>
+            <th>Word Index</th>
+            <th>Sentence number</th>
+            <th>Verse number</th>
+            <th>Brief</th>
+        </tr>
+        <tr  *ngFor="let p of positions">
+            <td>{{p.wordValue}}</td>
+            <td>{{p.wordIndex}}</td>
+            <td>{{p.sentenceNumber}}</td>
+            <td>{{p.verseNumber}}</td>
+            <td>
+                <a class="shortBriefLink" routerLink="/positions/shortSongBrief/{{p.positionId}}/1">
+                    ...
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+    <a class="findWordByIndexFormLink" routerLink="/positions/findWordByIndexForm">Find word by index</a>
+

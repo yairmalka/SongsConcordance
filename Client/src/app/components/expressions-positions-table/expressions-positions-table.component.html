@@ -1,0 +1,22 @@
+<app-sub-header> All occurrences of:</app-sub-header>
+<h3> {{expression}}</h3>
+<div>
+    <table>
+        <tr>
+            <th>Song</th>
+            <th>Word index</th>
+            <th>Sentence Number</th>
+            <th>Verse Number</th>
+            <th>Brief</th>
+        </tr>
+        <tr *ngFor="let sNp of expressionsLocations">
+            <td>{{sNp.artistAndTitle}}</td>
+            <td>{{sNp.wordIndex}}</td>
+            <td>{{sNp.sentenceNumber}}</td>
+            <td>{{sNp.verseNumber}}</td>
+            <td>
+                <a routerLink="/positions/shortSongBrief/{{sNp.positionId}}/{{numOfWordsInTheExpression}}" style="text-decoration:none">...</a>
+            </td>
+        </tr>
+    </table>
+</div>

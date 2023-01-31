@@ -1,0 +1,10 @@
+  div{
+    height: 75%;
+    overflow: auto;
+  }
+
+.findSongsByDataLink{
+    position: absolute;
+    right: 20px;
+    top: 120px;
+  }

@@ -1,0 +1,16 @@
+<app-sub-header></app-sub-header> List of words in "{{groupName}}" group
+
+<div>
+    <table id="excel-table">
+        <tr>
+            <th>Words</th>
+        </tr>
+        <tr *ngFor="let w of listOfTheWordsInTheGroup">
+            <td>{{w.wordValue}}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="downloadBtn">
+    <button style="cursor:pointer" (click)="exportToExcel()">Export To Excel</button>
+</div>

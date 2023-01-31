@@ -1,0 +1,40 @@
+<app-sub-header>find songs</app-sub-header>
+
+<div class="findSongsByDataForm">
+    <form>
+        <label>Artist: </label>     <input type="text" name="artist" [(ngModel)]="userInputSongModel.artist"><br><br>
+        <label>Title: </label>      <input type="text" name="title" [(ngModel)]="userInputSongModel.title"><br><br>
+        <label>Year:  </label>       <input type="number" name="year" [(ngModel)]="userInputSongModel.year"><br><br>
+        <label>Album: </label>      <input type="text" name="album" [(ngModel)]="userInputSongModel.album"><br><br>
+        <label>Genre: </label>      <input type="text" name="genre" [(ngModel)]="userInputSongModel.genre"><br><br>
+        <label>Words: </label> <input type="text" name="artist" [(ngModel)]="wordsFromText"><br><br>
+        <button (click)="searchSongByData()">Search</button>
+    </form>
+</div>
+
+<div class="tableOfOutputSongs">
+    <table>
+        <tr>
+            <th>Artist</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Album</th>
+            <th>Genre</th>
+            <th>Lyric</th>
+        </tr>
+        <tr *ngFor="let s of listOfSongs">
+            <td>{{s.artist}}</td>
+            <td>{{s.title}}</td>
+            <td>{{s.year}}</td>
+            <td>{{s.album}}</td>
+            <td>{{s.genre}}</td>
+            <td><a class="fullSongLyricLink" routerLink="/songs/fullSongLyric/{{s.songId}}">
+                <img src="/assets/lyricIcon.png">
+
+            </a>
+            </td>
+        </tr>
+
+    </table>
+
+</div>

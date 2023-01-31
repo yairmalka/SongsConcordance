@@ -1,0 +1,18 @@
+<app-sub-header>List of all {{words.length}} Words</app-sub-header>
+<div>
+
+    <table>
+        <tr>
+            <th>Word</th>
+            <th>Length</th>
+            <th>Occurrences</th>
+        </tr>
+            <tr *ngFor="let w of words"> 
+                <td> {{w.wordValue}}</td>
+                <td> {{w.wordLength}}</td>
+                <td> {{w.wordCount}}</td>
+            </tr>
+
+    </table>
+
+</div>

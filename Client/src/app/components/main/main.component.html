@@ -1,0 +1,13 @@
+<div>
+    <h4> This is a concordance application, you can simply load txt files hit the "upload" button<br>
+        and then, continue with all the options in the left side.
+    </h4> 
+
+    <ng-container class="=fileUpContainer">
+      <input #fileUpload type="file" accept=".txt" (change)="HandleFileInput($event)" multiple>
+       <a routerLink="">
+        <img src="/assets/uploadIcon.png" (click)="fileUpload.click()">
+       </a>
+            <button *ngIf="clicked" (click)="loadTables()">Load All Tables</button>
+    </ng-container>
+</div>
